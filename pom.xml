@@ -6,7 +6,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<properties>
 		<soapui.plugin.version>
-			5.1.3
+			5.1.2
 		</soapui.plugin.version>
 	</properties>
 	<pluginRepositories>
@@ -19,13 +19,20 @@
 		<plugins>
 			<plugin>
 				<groupId>com.smartbear.soapui</groupId>
-				<artifactId>soapui-maven-plugin</artifactId>
+				<artifactId>soapui-pro-maven-plugin</artifactId>
 				<version>${soapui.plugin.version}</version>
+				<dependencies>
+					<dependency>
+						<groupId>org.reflections</groupId>
+						<artifactId>reflections</artifactId>
+						<version>0.9.10</version>
+					</dependency>
+				</dependencies>
 				<configuration>
-					<testFailIgnore>true</testFailIgnore>
 					<settingsFile>${basedir}/src/config/soapui-settings.xml</settingsFile>
 					<junitReport>true</junitReport>
-					<outputFolder>${project.build.directory}/reports</outputFolder>
+					<printReport>true</printReport>
+					<coverage>${project.build.directory}/reports</coverage>
 				</configuration>
 				<executions>
 					<execution>
@@ -34,6 +41,8 @@
 							<goal>test</goal>
 						</goals>
 						<configuration>
+							<testFailIgnore>true</testFailIgnore>
+							<outputFolder>${project.build.directory}/reports</outputFolder>
 							<projectFile>${basedir}/src/test/resources/GData-Youtube-soapui-project.xml</projectFile>
 						</configuration>
 					</execution>
