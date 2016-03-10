@@ -1,4 +1,5 @@
 SoapUI_Maven
 ============
 This is a basic project to integrate SoapUI functional tests with Maven.
-For the same project we can configure jenkins job.
+One should use JDK7 or later version to run this.
+Jenkins job can also be configured with this setup
