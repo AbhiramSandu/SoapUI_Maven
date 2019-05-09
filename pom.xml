@@ -43,8 +43,9 @@
 						<configuration>
 							<testFailIgnore>true</testFailIgnore>
 							<outputFolder>${project.build.directory}/reports</outputFolder>
-							<projectFile>${basedir}/src/test/resources/GData-Youtube-soapui-project.xml</projectFile>
-						</configuration>
+							<!--<projectFile>${basedir}/src/test/resources/GData-Youtube-soapui-project.xml</projectFile>
+						
+--><projectFile>SoapUI_Maven-soapui-project.xml</projectFile></configuration>
 					</execution>
 				</executions>
 			</plugin>
